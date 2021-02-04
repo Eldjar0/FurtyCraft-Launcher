@@ -144,7 +144,7 @@ function updateSelectedServer(serv){
     }
     ConfigManager.setSelectedServer(serv != null ? serv.getID() : null)
     ConfigManager.save()
-    server_selection_button.innerHTML = '\u2022 ' + (serv != null ? serv.getName() : 'No Server Selected')
+    server_selection_button.innerHTML = '\u2022 ' + (serv != null ? "Prêt à jouer" : 'No Server Selected')
     if(getCurrentView() === VIEWS.settings){
         animateModsTabRefresh()
     }
@@ -152,10 +152,10 @@ function updateSelectedServer(serv){
 }
 // Real text is set in uibinder.js on distributionIndexDone.
 server_selection_button.innerHTML = '\u2022 Loading..'
-server_selection_button.onclick = (e) => {
+/*server_selection_button.onclick = (e) => {
     e.target.blur()
-    toggleServerSelection(true)
-}
+    toggleServerSelection(false)
+}*/
 
 // Update Mojang Status Color
 const refreshMojangStatuses = async function(){
